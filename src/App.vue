@@ -2,34 +2,54 @@
 
 import axios from 'axios'
 
+import ProjectCard from "./components/ProjectCard.vue"
+
 export default {
+
+  components: {
+    ProjectCard,
+    ProjectCard
+  },
+
   data() {
     return {
       API_URL: 'http://127.0.0.1:8000/',
       PROJECTS_PATH: 'api/projects',
       projects: [],
     }
-  }, method: {
+  }, methods: {
+
     getProjects(url) {
+
       axios.get(url)
         .then(response => {
-          console.log(response.data);
+          this.projects = response.data.projects.data
+          console.log(this.projects);
         })
         .catch(error => {
           console.error(error);
         })
-
     }
+
   }, mounted() {
-    const url = this.API_URL + this.PROJECTS_PATH
-    console.log(url);
+
+    const url = this.API_URL + this.PROJECTS_PATH;
+    this.getProjects(url);
   }
 }
 
 </script>
 
 <template>
-  <h1>Home page</h1>
+  <h1 class="text-center">Home page</h1>
+  <div class="container">
+    <div class="row row-cols-sm-2 row-cols-lg-3">
+
+      <ProjectCard v-for="project in projects" :name="project.name" :description="project.description"
+        :link="project.git_hub_link" :technologies="project.technologies" />
+
+    </div>
+  </div>
 </template>
 
 <style scoped></style>
