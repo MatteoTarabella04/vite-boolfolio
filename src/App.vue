@@ -8,7 +8,6 @@ export default {
 
   components: {
     ProjectCard,
-    ProjectCard
   },
 
   data() {
@@ -46,7 +45,7 @@ export default {
     <div class="row row-cols-sm-2 row-cols-lg-3">
 
       <ProjectCard v-for="project in projects" :name="project.name" :description="project.description"
-        :link="project.git_hub_link" :technologies="project.technologies" />
+        :link="project.git_hub_link" :project="project" />
 
     </div>
   </div>
