@@ -11,7 +11,7 @@ export default {
          logo
       </div>
       <nav class="nav justify-content-center">
-         <a class="nav-link" href="#" aria-current="page">Home</a>
+         <RouterLink class="nav-link" :to="{ name: 'home' }" aria-current="page">Home</RouterLink>
          <a class="nav-link" href="#">About</a>
          <a class="nav-link" href="#">Contacts</a>
       </nav>
