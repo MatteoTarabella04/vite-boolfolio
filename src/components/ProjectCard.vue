@@ -38,6 +38,11 @@ export default {
             </div>
             <a target="_blank" :href="link">{{ link }}</a>
          </div>
+         <div class="card-footer">
+            <!-- <router-link :to="{ name: 'single-project', params: { slug: Project.slug } }" class="btn btn-primary">
+               View {{ project.name }}
+            </router-link> -->
+         </div>
       </div>
    </div>
 </template>
