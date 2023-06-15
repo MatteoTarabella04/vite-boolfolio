@@ -39,9 +39,9 @@ export default {
             <a target="_blank" :href="link">{{ link }}</a>
          </div>
          <div class="card-footer">
-            <!-- <router-link :to="{ name: 'single-project', params: { slug: Project.slug } }" class="btn btn-primary">
-               View {{ project.name }}
-            </router-link> -->
+            <router-link :to="{ name: 'single-project', params: { slug: project.slug } }" class="btn btn-primary">
+               View Project
+            </router-link>
          </div>
       </div>
    </div>
