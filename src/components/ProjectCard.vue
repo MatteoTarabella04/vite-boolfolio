@@ -1,18 +1,40 @@
 <script>
+
+import axios from "axios"
+
 export default {
    name: "ProjectCard",
-   props: {
-      project: Object,
-      name: String,
-      link: String,
-      description: String,
+   data() {
+      return {
+         API_URL: 'http://127.0.0.1:8000/',
+         PROJECTS_PATH: 'api/projects',
+         projects: [],
+      }
+   }, methods: {
+
+      getProjects(url) {
+
+         axios.get(url)
+            .then(response => {
+               this.projects = response.data.projects.data
+               console.log(this.projects);
+            })
+            .catch(error => {
+               console.error(error);
+            })
+      }
+
+   }, mounted() {
+
+      const url = this.API_URL + this.PROJECTS_PATH;
+      this.getProjects(url);
    }
 }
 
 </script>
 
 <template>
-   <div class="col">
+   <div class="col" v-for="project in projects">
       <div class="card h-100 p-0">
          <div class="card-header">
             <h3 class="card-title">{{ project.name }}</h3>
