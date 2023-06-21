@@ -34,7 +34,7 @@ export default {
 </script>
 
 <template>
-   <div class="col" v-for="project in  projects ">
+   <div class="col mb-3" v-for="project in  projects ">
       <div class="card h-100 p-0">
 
          <div class="card-body">
@@ -48,7 +48,7 @@ export default {
             <ul class="d-flex flex-wrap gap-2 list-unstyled" v-if="project.technologies">
                <li v-for="tech in project.technologies">
 
-                  <span class="badge bg-primary">
+                  <span class="badge">
                      {{ tech.name }}
                   </span>
 
@@ -67,7 +67,7 @@ export default {
          </div>
          <div class="mb-3 ps-3">
             <router-link :to="{ name: 'single-project', params: { slug: project.slug } }">
-               View more...
+               <span class="router_link">View more...</span>
             </router-link>
          </div>
 
@@ -78,16 +78,41 @@ export default {
 <style scoped>
 .card {
 
-   background-color: rgba(7, 11, 49, 0.795);
+   background-color: #0093E9;
+   background-image: linear-gradient(135deg, #0093E9 0%, #8ac8cd 50%, #e89568 100%);
+
    border: none;
 
    color: white;
+   transition: 1s;
 
+   &:hover {
+      transform: scale(1.05);
+   }
+
+}
+
+.badge {
+   background-color: #52cdbc;
+   cursor: pointer;
 }
 
 .links {
    .link {
-      color: rgb(255, 255, 255);
+      color: #ffffff;
+
+      &:hover {
+
+         text-decoration: underline;
+      }
+   }
+}
+
+.router_link {
+   color: #ffffff;
+
+   &:hover {
+      text-decoration: underline;
    }
 }
 </style>

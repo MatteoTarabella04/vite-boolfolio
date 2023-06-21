@@ -17,7 +17,7 @@ export default {
       </section>
       <section class="me_menu">
          <div class="container d-flex">
-            <div class="col-6 d-flex flex-column justify-content-between h-100">
+            <div class="col-6 d-flex flex-column justify-content-between h-100 left">
                <div class="top">
                   <h1>
                      Hello, i'm Matteo
@@ -132,6 +132,11 @@ export default {
 
                </section>
 
+               <section id="projects">
+                  <h2 class="mb-3 text-white">Projects</h2>
+                  <ProjectCard />
+               </section>
+
             </div>
          </div>
       </section>
@@ -192,7 +197,9 @@ p {
 }
 
 .skills_card {
-   background-color: #8092d57d;
+   background-color: #0093E9;
+   background-image: linear-gradient(135deg, #0093E9 0%, #8ac8cd 50%, #e89568 100%);
+
 }
 
 a {
