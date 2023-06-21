@@ -1,1 +1,11 @@
 @import "/node_modules/bootstrap/scss/bootstrap.scss";
+
+body {
+   background: rgb(5, 3, 52);
+   background: linear-gradient(335deg, rgba(5, 3, 52, 1) 0%, rgba(3, 3, 66, 1) 50%, rgba(10, 73, 111, 1) 100%);
+   background-repeat: no-repeat;
+}
+
+a {
+   text-decoration: none;
+}

@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader />
+  <!-- <AppHeader /> -->
   <RouterView />
 </template>
 

@@ -34,12 +34,11 @@ export default {
 </script>
 
 <template>
-   <div class="col" v-for="project in projects">
+   <div class="col" v-for="project in  projects ">
       <div class="card h-100 p-0">
-         <div class="card-header">
-            <h3 class="card-title">{{ project.name }}</h3>
-         </div>
+
          <div class="card-body">
+            <h3 class="card-title">{{ project.name }}</h3>
             <p>
                {{ project.description }}
             </p>
@@ -58,13 +57,37 @@ export default {
             <div v-if="project.type" class="type">
                <p><b>Type: </b>{{ project.type.name }}</p>
             </div>
-            <a target="_blank" :href="link">{{ link }}</a>
+
+            <div class="links mb-3">
+               <a class="link" target="_blank" :href="project.git_hub_link">{{ project.git_hub_link }}</a>
+               <a class="link" v-if="project.page_link" target="_blank" :href="project.page_link">{{ project.page_link
+               }}</a>
+            </div>
+
          </div>
-         <div class="card-footer">
-            <router-link :to="{ name: 'single-project', params: { slug: project.slug } }" class="btn btn-primary">
-               View Project
+         <div class="mb-3 ps-3">
+            <router-link :to="{ name: 'single-project', params: { slug: project.slug } }">
+               View more...
             </router-link>
          </div>
+
       </div>
    </div>
 </template>
+
+<style scoped>
+.card {
+
+   background-color: rgba(7, 11, 49, 0.795);
+   border: none;
+
+   color: white;
+
+}
+
+.links {
+   .link {
+      color: rgb(255, 255, 255);
+   }
+}
+</style>
