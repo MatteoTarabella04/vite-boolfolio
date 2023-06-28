@@ -22,19 +22,24 @@ export default {
                   <h1>
                      Hello, i'm Matteo
                   </h1>
+                  <h5 class="text-white">
+                     Jr. Full Stack Web Developer
+                  </h5>
                   <p>
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore totam ratione illo sapiente, dicta
-                     quaerat perspiciatis nisi sunt at quidem?
+                     Rome, Italy
                   </p>
                   <div class="mt-5">
                      <ul class="list-unstyled py-4">
-                        <li>
+                        <li class="mb-4 d-flex align-items-center gap-1">
+                           <div class="line"></div>
                            <a href="#about">About</a>
                         </li>
-                        <li>
+                        <li class="mb-4 d-flex align-items-center gap-1">
+                           <div class="line"></div>
                            <a href="#skills">Skills</a>
                         </li>
-                        <li>
+                        <li class="mb-4 d-flex align-items-center gap-1">
+                           <div class="line"></div>
                            <a href="#projects">Projects</a>
                         </li>
                      </ul>
@@ -78,24 +83,23 @@ export default {
             <div class="col-6 right">
 
                <section id="about">
-                  <div class="mb-5 text-end">
-                     <img src="https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg"
-                        alt="avatar" class="rounded-circle" height="200">
+                  <div class="mb-5">
+                     <div class="image rounded-circle">
+
+                     </div>
                   </div>
 
                   <p>
-                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt dignissimos fugiat similique?
-                     Consequatur repellat id sint provident fugiat, necessitatibus consequuntur harum maxime quos in eos
-                     nam vel quasi a non dicta explicabo atque mollitia, dolores alias quaerat earum aperiam aliquid
-                     inventore. Accusantium officia minus dolor officiis sequi corporis assumenda laborum.
+                     A seguito degli studi, dopo aver lavorato come cameriere e poi come tecnico riparatore/manutentore, ho
+                     deciso di intraprendere il percorso che ho sempre desiderato percorrere; quello per il quale ho deciso
+                     di diplomarmi per poi specializzarmi. Il settore informatico. Sono pronto a mettermi in gioco e fare
+                     della mia passione un lavoro.
                   </p>
                   <p>
-                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt dignissimos fugiat similique?
-                     Consequatur repellat id sint provident fugiat, necessitatibus consequuntur harum maxime quos in eos
-                     nam vel quasi a non dicta explicabo atque mollitia
+                     Formazione : Boolean
                   </p>
                   <p>
-                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                     Diploma Informatica e Telecomunicazioni presso Istituto Tecninco Guglielmo Marconi, Civitavecchia (RM)
                   </p>
 
                </section>
@@ -202,8 +206,42 @@ p {
 
 }
 
+.image {
+
+   height: 200px;
+   aspect-ratio: 1;
+
+   background-image: url('../assets/img/AvatarMaker.png');
+   background-size: cover;
+   background-position-y: bottom;
+
+   border: 3px solid #ffffff;
+
+   margin: auto;
+}
+
+.line {
+   height: 1px;
+   width: 40px;
+   background-color: #ffffff;
+
+   transition: 1s;
+}
+
+li {
+
+   &:hover {
+
+      .line {
+         width: 60px;
+         background-color: #52cdbc;
+      }
+   }
+}
+
 a {
    color: white;
+   transition: 1s;
 
    &:hover {
       color: #52cdbc;
